@@ -23,7 +23,7 @@ function main() {
   var cero = document.getElementById('cero')
   var reset = document.getElementById('reset')
   var igual = document.getElementById('igual')
-  var igual = document.getElementById('suma')
+  var suma = document.getElementById('suma')
 
   var resultado = document.getElementById("resultado")
 
@@ -97,7 +97,7 @@ function main() {
     resultado.textContent = resultado.textContent + "3";
   }
   resta.onclick = () => {
-    operadorA = resultado.textContent;
+    operandoA = resultado.textContent;
     operador = "-";
     resultado.textContent = "";
   }
@@ -117,11 +117,25 @@ function main() {
     resultado.textContent = "";
   }
   igual.onclick = () => {
-    operadorB = resultado.textContent;
-    operador = "=";
+    operandoB = resultado.textContent;
+    switch(operador){
+      case "/":
+          solución = parseFloat(operandoA) / parseFloat(operandoB);
+          break;
+      case "*":
+          solución = parseFloat(operandoA) * parseFloat(operandoB);
+          break;
+      case "-":
+          solución = parseFloat(operandoA) - parseFloat(operandoB);
+          break;
+      case "+":
+          solución = parseFloat(operandoA) + parseFloat(operandoB);
+          break;
+    }
+    resultado.textContent = solución;
   }
   suma.onclick = () => {
-    operadorA = resultado.textContent;
+    operandoA = resultado.textContent;
     operador = "+";
     resultado.textContent = "";
   }
