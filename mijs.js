@@ -1,3 +1,7 @@
+var operandoA
+var operador
+var operandoB
+
 function main() {
   console.log("Que comiencen los juegos de JS");
 
@@ -14,10 +18,12 @@ function main() {
   var uno = document.getElementById('uno')
   var dos = document.getElementById('dos')
   var tres = document.getElementById('tres')
-  var suma = document.getElementById('suma')
+  var resta = document.getElementById('resta')
 
   var cero = document.getElementById('cero')
+  var reset = document.getElementById('reset')
   var igual = document.getElementById('igual')
+  var igual = document.getElementById('suma')
 
   var resultado = document.getElementById("resultado")
 
@@ -40,10 +46,10 @@ function main() {
     resultado.textContent = resultado.textContent + "9";
   }
   división.onclick = () => {
-    console.log("/");
+    operandoA = resultado.textContent;
+    operador = "/";
+    resultado.textContent = "";
 
-    var display = document.getElementById('display');
-    display.innerHTML = "/"
   }
 
 
@@ -66,11 +72,13 @@ function main() {
     resultado.textContent = resultado.textContent + "6";
   }
   multiplicación.onclick = () => {
-    console.log("*");
-
-    var display = document.getElementById('display');
-    display.innerHTML = "*"
+    operandoA = resultado.textContent;
+    operador = "*";
+    resultado.textContent = "";
   }
+
+
+
 
 
   uno.onclick = () => {
@@ -88,12 +96,14 @@ function main() {
 
     resultado.textContent = resultado.textContent + "3";
   }
-  suma.onclick = () => {
-    console.log("+");
-
-    var display = document.getElementById('display');
-    display.innerHTML = "+"
+  resta.onclick = () => {
+    operadorA = resultado.textContent;
+    operador = "-";
+    resultado.textContent = "";
   }
+
+
+
 
 
   cero.onclick = () => {
@@ -101,10 +111,18 @@ function main() {
 
     resultado.textContent = resultado.textContent + "0";
   }
-  igual.onclick = () => {
-    console.log("=");
+  reset.onclick = () => {
+    console.log("AC");
 
-    var display = document.getElementById('display');
-    display.innerHTML = "="
+    resultado.textContent = "";
+  }
+  igual.onclick = () => {
+    operadorB = resultado.textContent;
+    operador = "=";
+  }
+  suma.onclick = () => {
+    operadorA = resultado.textContent;
+    operador = "+";
+    resultado.textContent = "";
   }
 }
