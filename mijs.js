@@ -5,27 +5,58 @@ var operandoB
 function main() {
   console.log("Que comiencen los juegos de JS");
 
+  var reset = document.getElementById('reset')
+  var signo = document.getElementById('signo')
+  var porcentaje = document.getElementById('porcentaje')
+  var división = document.getElementById('división')
+
   var siete = document.getElementById('siete')
   var ocho = document.getElementById('ocho')
   var nueve = document.getElementById('nueve')
-  var división = document.getElementById('división')
+  var multiplicación = document.getElementById('multiplicación')
+
 
   var cuatro = document.getElementById('cuatro')
   var cinco = document.getElementById('cinco')
   var seis = document.getElementById('seis')
-  var multiplicación = document.getElementById('multiplicación')
+  var resta = document.getElementById('resta')
 
   var uno = document.getElementById('uno')
   var dos = document.getElementById('dos')
   var tres = document.getElementById('tres')
-  var resta = document.getElementById('resta')
-
-  var cero = document.getElementById('cero')
-  var reset = document.getElementById('reset')
-  var igual = document.getElementById('igual')
   var suma = document.getElementById('suma')
 
+  var cero = document.getElementById('cero')
+  var coma = document.getElementById('coma')
+  var igual = document.getElementById('igual')
+
   var resultado = document.getElementById("resultado")
+
+  reset.onclick = () => {
+    console.log("AC");
+
+    resultado.textContent = "";
+    operador = "";
+    operandoA = "0";
+    operandoB = "";
+  }
+  signo.onclick = () => {
+    console.log("signo");
+    resultado.textContent = -resultado.textContent;
+  }
+  porcentaje.onclick = () => {
+    console.log("porcentaje");
+    operandoA = resultado.textContent;
+    resultado.textContent = parseFloat(operandoA) / 100;
+  }
+  división.onclick = () => {
+    operandoA = resultado.textContent;
+    operador = "/";
+    resultado.textContent = "";
+
+  }
+
+
 
 
   siete.onclick = () => {
@@ -45,11 +76,10 @@ function main() {
 
     resultado.textContent = resultado.textContent + "9";
   }
-  división.onclick = () => {
+  multiplicación.onclick = () => {
     operandoA = resultado.textContent;
-    operador = "/";
+    operador = "*";
     resultado.textContent = "";
-
   }
 
 
@@ -71,9 +101,9 @@ function main() {
 
     resultado.textContent = resultado.textContent + "6";
   }
-  multiplicación.onclick = () => {
+  resta.onclick = () => {
     operandoA = resultado.textContent;
-    operador = "*";
+    operador = "-";
     resultado.textContent = "";
   }
 
@@ -96,12 +126,11 @@ function main() {
 
     resultado.textContent = resultado.textContent + "3";
   }
-  resta.onclick = () => {
+  suma.onclick = () => {
     operandoA = resultado.textContent;
-    operador = "-";
+    operador = "+";
     resultado.textContent = "";
   }
-
 
 
 
@@ -111,13 +140,14 @@ function main() {
 
     resultado.textContent = resultado.textContent + "0";
   }
-  reset.onclick = () => {
-    console.log("AC");
+  coma.onclick = () => {
+    console.log("coma");
 
-    resultado.textContent = "";
+    resultado.textContent = resultado.textContent + ".";
   }
   igual.onclick = () => {
     operandoB = resultado.textContent;
+    solución = "";
     switch(operador){
       case "/":
           solución = parseFloat(operandoA) / parseFloat(operandoB);
@@ -133,10 +163,5 @@ function main() {
           break;
     }
     resultado.textContent = solución;
-  }
-  suma.onclick = () => {
-    operandoA = resultado.textContent;
-    operador = "+";
-    resultado.textContent = "";
   }
 }
