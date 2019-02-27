@@ -5,33 +5,43 @@ var operandoB
 function main() {
   console.log("Que comiencen los juegos de JS");
 
+  var cuadrado = document.getElementById('cuadrado')
   var reset = document.getElementById('reset')
   var signo = document.getElementById('signo')
   var porcentaje = document.getElementById('porcentaje')
   var división = document.getElementById('división')
 
+  var raiz = document.getElementById('raiz')
   var siete = document.getElementById('siete')
   var ocho = document.getElementById('ocho')
   var nueve = document.getElementById('nueve')
   var multiplicación = document.getElementById('multiplicación')
 
 
+  var logaritmo = document.getElementById('logaritmo')
   var cuatro = document.getElementById('cuatro')
   var cinco = document.getElementById('cinco')
   var seis = document.getElementById('seis')
   var resta = document.getElementById('resta')
 
+
+  var diez = document.getElementById('diez')
   var uno = document.getElementById('uno')
   var dos = document.getElementById('dos')
   var tres = document.getElementById('tres')
   var suma = document.getElementById('suma')
 
+  var pi = document.getElementById('pi')
   var cero = document.getElementById('cero')
   var coma = document.getElementById('coma')
   var igual = document.getElementById('igual')
 
   var resultado = document.getElementById("resultado")
 
+  cuadrado.onclick = () => {
+    console.log("x^2");
+    resultado.textContent = Math.pow(resultado.textContent,2);
+  }
   reset.onclick = () => {
     console.log("AC");
 
@@ -47,6 +57,11 @@ function main() {
   porcentaje.onclick = () => {
     console.log("porcentaje");
     operandoA = resultado.textContent;
+    switch(operandoA){
+      case "":
+        operandoA = "0";
+      break;
+    }
     resultado.textContent = parseFloat(operandoA) / 100;
   }
   división.onclick = () => {
@@ -59,6 +74,10 @@ function main() {
 
 
 
+  raiz.onclick = () => {
+    console.log("x^1/2");
+    resultado.textContent = Math.sqrt(resultado.textContent);
+  }
   siete.onclick = () => {
     console.log("7");
 
@@ -85,6 +104,10 @@ function main() {
 
 
 
+  logaritmo.onclick = () => {
+    console.log("log");
+    resultado.textContent = Math.log(resultado.textContent)/Math.log(10);
+  }
   cuatro.onclick = () => {
     console.log("4");
 
@@ -111,6 +134,10 @@ function main() {
 
 
 
+  diez.onclick = () => {
+    console.log("diez");
+    resultado.textContent = Math.pow(10,resultado.textContent);
+  }
   uno.onclick = () => {
     console.log("1");
 
@@ -135,6 +162,10 @@ function main() {
 
 
 
+  pi.onclick = () => {
+    console.log("pi");
+    resultado.textContent = Math.PI;
+  }
   cero.onclick = () => {
     console.log("0");
 
