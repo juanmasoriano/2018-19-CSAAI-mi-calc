@@ -181,26 +181,26 @@ function main() {
     solución = "";
     switch(operador){
       case "/":
-      if(operandoA != "" && operandoB != ""){
-        solución = parseFloat(operandoA) / parseFloat(operandoB);
-      }else if(operandoA != "" && operandoB == ""){
-        operandoB = "0";
-        solución = parseFloat(operandoA) / parseFloat(operandoB);
-      }else if(operandoA == "" && operandoB != ""){
-        operandoA = "0";
-        solución = parseFloat(operandoA) / parseFloat(operandoB);
-      }
+        if(operandoA != "" && operandoB != ""){
+          solución = parseFloat(operandoA) / parseFloat(operandoB);
+        }else if(operandoA != "" && operandoB == ""){
+          operandoB = "0";
+          solución = parseFloat(operandoA) / parseFloat(operandoB);
+        }else if(operandoA == "" && operandoB != ""){
+          operandoA = "0";
+          solución = parseFloat(operandoA) / parseFloat(operandoB);
+        }
       break;
       case "*":
-      if(operandoA != "" && operandoB != ""){
-        solución = parseFloat(operandoA) * parseFloat(operandoB);
-      }else if(operandoA != "" && operandoB == ""){
-        operandoB = "0";
-        solución = parseFloat(operandoA) * parseFloat(operandoB);
-      }else if(operandoA == "" && operandoB != ""){
-        operandoA = "0";
-        solución = parseFloat(operandoA) * parseFloat(operandoB);
-      }
+        if(operandoA != "" && operandoB != ""){
+          solución = parseFloat(operandoA) * parseFloat(operandoB);
+        }else if(operandoA != "" && operandoB == ""){
+          operandoB = "0";
+          solución = parseFloat(operandoA) * parseFloat(operandoB);
+        }else if(operandoA == "" && operandoB != ""){
+          operandoA = "0";
+          solución = parseFloat(operandoA) * parseFloat(operandoB);
+        }
       break;
       case "-":
           if(operandoA != "" && operandoB != ""){
@@ -214,15 +214,15 @@ function main() {
           }
           break;
       case "+":
-      if(operandoA != "" && operandoB != ""){
-        solución = parseFloat(operandoA) + parseFloat(operandoB);
-      }else if(operandoA != "" && operandoB == ""){
-        operandoB = "0";
-        solución = parseFloat(operandoA) + parseFloat(operandoB);
-      }else if(operandoA == "" && operandoB != ""){
-        operandoA = "0";
-        solución = parseFloat(operandoA) + parseFloat(operandoB);
-      }
+        if(operandoA != "" && operandoB != ""){
+          solución = parseFloat(operandoA) + parseFloat(operandoB);
+        }else if(operandoA != "" && operandoB == ""){
+          operandoB = "0";
+          solución = parseFloat(operandoA) + parseFloat(operandoB);
+        }else if(operandoA == "" && operandoB != ""){
+          operandoA = "0";
+          solución = parseFloat(operandoA) + parseFloat(operandoB);
+        }
       break;
     }
     resultado.textContent = solución;
